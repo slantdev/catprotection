@@ -1,0 +1,26 @@
+{
+  "scripts": {
+    "production:css-app": "cross-env NODE_ENV=development tailwindcss -i ./resources/css/cp_app.css -o ./assets/css/cp_app.css --postcss --minify",
+    "production:js-app": "cross-env NODE_ENV=development ./node_modules/.bin/esbuild ./resources/js/cp_app.js --bundle --outfile=./assets/js/cp_app.js --minify",
+    "dev:css-app": "cross-env NODE_ENV=development tailwindcss -i ./resources/css/cp_app.css -o ./assets/css/cp_app.css --postcss",
+    "dev:js-app": "cross-env NODE_ENV=development ./node_modules/.bin/esbuild ./resources/js/cp_app.js --bundle --outfile=./assets/js/cp_app.js",
+    "watch:css-app": "cross-env NODE_ENV=development tailwindcss -i ./resources/css/cp_app.css -o ./assets/css/cp_app.css --postcss --watch",
+    "watch:js-app": "cross-env NODE_ENV=development ./node_modules/.bin/esbuild ./resources/js/cp_app.js --bundle --outfile=./assets/js/cp_app.js --watch",
+    "production": "cross-env NODE_ENV=production concurrently \"npm run production:css-app\" \"npm run production:js-app\"",
+    "dev": "cross-env NODE_ENV=development concurrently \"npm run dev:css-app\" \"npm run dev:js-app\" ",
+    "watch": "cross-env NODE_ENV=development concurrently \"npm run watch:css-app\" \"npm run watch:js-app\"",
+    "browser-sync": "cross-env NODE_ENV=development browser-sync start --proxy \"catprotection.local\" --host=\"catprotection.local\" --no-inject-changes --files=\"./\"",
+    "watch-sync": "cross-env NODE_ENV=development concurrently \"npm run browser-sync\" \"npm run watch\""
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "browser-sync": "^2.27.11",
+    "concurrently": "^7.6.0",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.17.4",
+    "postcss": "^8.4.21",
+    "postcss-import": "^15.1.0",
+    "resolve-url-loader": "^5.0.0",
+    "tailwindcss": "^3.2.4"
+  }
+}
