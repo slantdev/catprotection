@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying product content within loops
  *
@@ -15,80 +16,82 @@
  * @version 3.6.0
  */
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 global $product;
 
 // Ensure visibility.
-if ( empty( $product ) || ! $product->is_visible() ) {
-	return;
+if (empty($product) || !$product->is_visible()) {
+  return;
 }
 ?>
 
 <div class="cell shop-products__item">
-    <figure>
-	<?php
-		/**
-		 * Hook: woocommerce_before_shop_loop_item.
-		 *
-		 * @hooked woocommerce_template_loop_product_link_open - 10
-		 */
-		do_action( 'woocommerce_before_shop_loop_item' );
+  <figure class="h-full">
+    <?php
+    /**
+     * Hook: woocommerce_before_shop_loop_item.
+     *
+     * @hooked woocommerce_template_loop_product_link_open - 10
+     */
+    do_action('woocommerce_before_shop_loop_item');
 
-		/**
-		 * Hook: woocommerce_before_shop_loop_item_title.
-		 *
-		 * @hooked woocommerce_show_product_loop_sale_flash - 10
-		 * @hooked woocommerce_template_loop_product_thumbnail - 10
-		 */
-		do_action( 'woocommerce_before_shop_loop_item_title' );
+    /**
+     * Hook: woocommerce_before_shop_loop_item_title.
+     *
+     * @hooked woocommerce_show_product_loop_sale_flash - 10
+     * @hooked woocommerce_template_loop_product_thumbnail - 10
+     */
+    do_action('woocommerce_before_shop_loop_item_title');
 
-		/**
-		 * Hook: woocommerce_shop_loop_item_title.
-		 *
-		 * @hooked woocommerce_template_loop_product_title - 10
-		 */
-		do_action( 'woocommerce_shop_loop_item_title' );
+    echo '<div class="p-3 md:p-4">';
+    /**
+     * Hook: woocommerce_shop_loop_item_title.
+     *
+     * @hooked woocommerce_template_loop_product_title - 10
+     */
+    do_action('woocommerce_shop_loop_item_title');
 
-		// get product_tags of the current product
-		$current_tags = get_the_terms( get_the_ID(), 'product_tag' );
+    // get product_tags of the current product
+    //$current_tags = get_the_terms(get_the_ID(), 'product_tag');
 
-		//only start if we have some tags
-		if ( $current_tags && ! is_wp_error( $current_tags ) ) { 
-		
-			$count == 0;
+    //only start if we have some tags
+    // if ($current_tags && !is_wp_error($current_tags)) {
 
-		    //for each tag we create a list item
-		    foreach ($current_tags as $tag) {
+    //   $count = 0;
 
-		    	if ( $count < 1) {
-					echo $count;
-			        $tag_title = $tag->name; // tag name
-			        //$tag_link = get_term_link( $tag );// tag archive link
+    //   //for each tag we create a list item
+    //   foreach ($current_tags as $tag) {
 
-			        echo '<div class="shop-products__tag">'.$tag_title.'</div>';
+    //     if ($count < 1) {
+    //       //echo $count;
+    //       $tag_title = $tag->name; // tag name
+    //       //$tag_link = get_term_link( $tag );// tag archive link
 
-			    }
+    //       echo '<div class="shop-products__tag">' . $tag_title . '</div>';
+    //     }
 
-		        $count++;
-		    }
-		}
+    //     $count++;
+    //   }
+    // }
 
-		/**
-		 * Hook: woocommerce_after_shop_loop_item_title.
-		 *
-		 * @hooked woocommerce_template_loop_rating - 5
-		 * @hooked woocommerce_template_loop_price - 10
-		 */
-		do_action( 'woocommerce_after_shop_loop_item_title' );
-	
-		/**
-		 * Hook: woocommerce_after_shop_loop_item.
-		 *
-		 * @hooked woocommerce_template_loop_product_link_close - 5
-		 * @hooked woocommerce_template_loop_add_to_cart - 10
-		 */
-		do_action( 'woocommerce_after_shop_loop_item' ); 
-	?>
-    </figure>
+    /**
+     * Hook: woocommerce_after_shop_loop_item_title.
+     *
+     * @hooked woocommerce_template_loop_rating - 5
+     * @hooked woocommerce_template_loop_price - 10
+     */
+    do_action('woocommerce_after_shop_loop_item_title');
+
+    echo '</div>';
+    /**
+     * Hook: woocommerce_after_shop_loop_item.
+     *
+     * @hooked woocommerce_template_loop_product_link_close - 5
+     * @hooked woocommerce_template_loop_add_to_cart - 10
+     */
+    do_action('woocommerce_after_shop_loop_item');
+
+    ?>
+  </figure>
 </div>

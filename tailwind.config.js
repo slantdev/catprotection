@@ -8,7 +8,20 @@ module.exports = {
     './safelist.txt',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        brand: {
+          blue: '#6EB8BB',
+        },
+      },
+    },
   },
-  plugins: [],
+  corePlugins: {
+    preflight: false,
+    aspectRatio: false,
+  },
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/typography'),
+  ],
 };

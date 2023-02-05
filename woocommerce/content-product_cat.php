@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying product category thumbnails within loops
  *
@@ -16,20 +17,20 @@
  * @version 2.6.1
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+if (!defined('ABSPATH')) {
+  exit;
 }
 ?>
 
-<?php 
-    $thumbnail_id = get_woocommerce_term_meta($category->term_id, 'thumbnail_id', true);
-	$size = 'gallery_tiles';	            
-    $image = wp_get_attachment_image_src($thumbnail_id, $size);	
+<?php
+$thumbnail_id = get_woocommerce_term_meta($category->term_id, 'thumbnail_id', true);
+$size = 'gallery_tiles';
+$image = wp_get_attachment_image_src($thumbnail_id, $size);
 ?>
 
-<a href="<?php echo get_category_link( $category ); ?>" class="cell shop-category__item">
-    <figure class="shop-category__figure">
-        <img src="<?php echo $image[0]; ?>" class="shop-category__img" alt="<?php echo $term->name; ?>">
-        <figcaption class="shop-category__name"><?php echo $category->name; ?></figcaption>
-    </figure>
+<a href="<?php echo get_category_link($category); ?>" class="cell shop-category__item">
+  <figure class="shop-category__figure">
+    <img src="<?php echo $image[0]; ?>" class="shop-category__img" alt="<?php echo $category->name; ?>">
+    <figcaption class="shop-category__name"><?php echo $category->name; ?></figcaption>
+  </figure>
 </a>
