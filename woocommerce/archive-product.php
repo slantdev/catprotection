@@ -104,9 +104,9 @@ do_action('woocommerce_before_main_content');
         <?php } ?>
       <?php } ?>
     </div>
-    <div>
+    <!-- <div>
       <div class="sorting mt-4 md:mt-0"></div>
-    </div>
+    </div> -->
   </div>
 </section>
 

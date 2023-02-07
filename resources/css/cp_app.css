@@ -9,18 +9,22 @@
   @apply text-3xl lg:text-3xl xl:text-[2.75rem] tracking-tight;
 }
 
-.woocommerce .summary input[type='number'].qty {
-  @apply rounded-md;
+.woocommerce .summary input[type='number'].qty,
+.woocommerce input[type='number'].qty {
+  @apply rounded-md border border-solid border-gray-300;
 }
 
 .shop-products__item {
   .woocommerce-loop-product__link {
     @apply block h-full bg-white rounded-lg border border-gray-200 border-solid hover:shadow-lg transition duration-300 overflow-hidden;
   }
+  .add_to_cart_button {
+    @apply hidden;
+  }
 }
 
 .woocommerce-ordering .orderby {
-  @apply border border-gray-200 border-solid rounded-lg;
+  @apply border border-gray-200 border-solid rounded-lg text-gray-700;
 }
 
 .topsectionheader .sorting {
@@ -63,9 +67,32 @@
 .flex-control-nav {
   @apply flex flex-wrap -mx-1 md:-mx-1.5 xl:-mx-2;
 }
-.woocommerce input[type='number'].qty {
-  @apply rounded-md;
+
+.woocommerce .shop table.variations tbody td.label,
+.woocommerce .shop table.variations tbody td {
+  @apply py-0;
+  label {
+    @apply p-0 text-base font-normal;
+  }
 }
+.woocommerce .shop table.variations tbody td.label {
+  @apply w-[10%];
+}
+.woocommerce .shop table.variations tbody td.value {
+  @apply w-[90%];
+}
+.woocommerce .shop table.variations tbody td.label select,
+.woocommerce .shop table.variations tbody td select {
+  @apply mb-0 border border-gray-300 border-solid rounded-lg text-gray-700 bg-white;
+}
+.single_variation_wrap {
+  .quantity {
+    &::before {
+      @apply w-[10%];
+    }
+  }
+}
+
 .woocommerce-shipping-calculator {
   @apply text-right;
 }
