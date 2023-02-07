@@ -90,6 +90,7 @@ require_once(dirname(__FILE__) . '/assets/inc/custom-taxonomies.php');
 require_once(dirname(__FILE__) . '/assets/inc/ajax-process.php');
 require_once(dirname(__FILE__) . '/assets/inc/acf.php');
 require_once(dirname(__FILE__) . '/assets/inc/gravity-forms-hooks.php');
+require_once(dirname(__FILE__) . '/assets/inc/woocommerce.php');
 
 /**
  * Wrap printr Development

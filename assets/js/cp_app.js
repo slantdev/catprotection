@@ -1,2 +1,1 @@
-(() => {
-})();
+(()=>{jQuery(function(t){t("#filter-product-cat").on("change",function(a){console.log(this.value),a.preventDefault(),t.ajax({type:"POST",url:"/wp-admin/admin-ajax.php",dataType:"html",data:{action:"shop_filter_category",product_cat:this.value},success:function(c){t(".shop-product-grid").html(c)}})})});})();
