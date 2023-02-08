@@ -6,6 +6,7 @@
             "key": "field_5cd4c431a6c79",
             "label": "Secondary Text (Left of Map)",
             "name": "secondary_text",
+            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -39,5 +40,13 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1619748761
+    "show_in_rest": 0,
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1675819176
 }
