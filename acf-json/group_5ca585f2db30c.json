@@ -80,6 +80,13 @@
                         "operator": "==",
                         "value": "found"
                     }
+                ],
+                [
+                    {
+                        "field": "field_5ca5860ae7c9c",
+                        "operator": "==",
+                        "value": "permanentfosterhome"
+                    }
                 ]
             ],
             "wrapper": {
@@ -88,10 +95,10 @@
                 "id": ""
             },
             "default_value": "",
+            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "append": ""
         },
         {
             "key": "field_62d7f0b0e743e",
@@ -673,5 +680,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1676480581
+    "modified": 1676481282
 }
