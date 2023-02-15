@@ -100,7 +100,7 @@ if ('found' == $status['value']) {
         <article class="cell medium-5 relative">
           <?php if ($status['value'] == 'adopted') : ?>
             <div class="card__flag"><?php echo $status['label']; ?></div>
-          <?php elseif ($status['value'] == 'fostered') : ?>
+          <?php elseif ($status['value'] == 'permanentfosterhome') : ?>
             <span class="card__flag bg-brand-orange"><?php echo $status['label']; ?></span>
           <?php endif; ?>
           <?php if ($slider) : ?>
@@ -202,7 +202,7 @@ if ('found' == $status['value']) {
           'post_type' => 'cats', 'posts_per_page' => -1, 'post_status'    => 'publish',
           'meta_query' => array(array(
             'key' => 'cat_status',
-            'value' => array('notadopted', 'adopted', 'fostered'),
+            'value' => array('notadopted', 'adopted', 'permanentfosterhome'),
             'compare'  => 'IN'
           ))
         );
@@ -230,7 +230,7 @@ if ('found' == $status['value']) {
               <figure class="gallery__figure">
                 <?php if ($status['value'] == 'adopted') : ?>
                   <span class="card__flag"><?php echo $status['label']; ?></span>
-                <?php elseif ($status['value'] == 'fostered') : ?>
+                <?php elseif ($status['value'] == 'permanentfosterhome') : ?>
                   <span class="card__flag bg-brand-orange"><?php echo $status['label']; ?></span>
                 <?php endif; ?>
                 <figcaption class="gallery__name"><?php the_title(); ?></figcaption>

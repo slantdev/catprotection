@@ -22,7 +22,8 @@
                 "found": "Found",
                 "lost": "Lost",
                 "notfostered": "Available for Foster",
-                "fostered": "Permanent Foster Home"
+                "fostered": "Fostered",
+                "permanentfosterhome": "Permanent Foster Home"
             },
             "default_value": "",
             "return_format": "array",
@@ -672,5 +673,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1676479133
+    "modified": 1676480581
 }
