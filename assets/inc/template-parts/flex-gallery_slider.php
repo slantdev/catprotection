@@ -11,7 +11,7 @@
           'post_type' => 'cats', 'posts_per_page' => -1, 'post_status'    => 'publish',
           'meta_query' => array(array(
             'key' => 'cat_status',
-            'value' => array('notadopted', 'adopted', 'fostered'),
+            'value' => array('notadopted', 'adopted', 'permanentfosterhome'),
             'compare'  => 'IN'
           ))
         );
@@ -43,7 +43,7 @@
                   <span class="card__flag">I come with a Friend</span>
                 <?php elseif ($status['value'] == 'adopted') : ?>
                   <span class="card__flag"><?php echo $status['label']; ?></span>
-                <?php elseif ($status['value'] == 'fostered') : ?>
+                <?php elseif ($status['value'] == 'permanentfosterhome') : ?>
                   <span class="card__flag bg-brand-orange"><?php echo $status['label']; ?></span>
                 <?php elseif ($status['value'] == 'found' || $status['value'] == 'lost' && $date) : ?>
                   <span class="card__flag"><?php echo $date; ?></span>
