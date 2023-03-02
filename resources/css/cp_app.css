@@ -4,6 +4,11 @@
 
 @import 'gravityforms.css';
 
+.footer__icon {
+  &.footer__icon--tiktok {
+    @apply indent-0 flex items-center justify-center;
+  }
+}
 .shop {
   @apply mt-0 md:mt-[3rem] lg:mt-[3.875rem];
 }
