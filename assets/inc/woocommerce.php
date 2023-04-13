@@ -11,7 +11,7 @@ function wc_before_shop_loop_start()
       $cat_args = array(
         'orderby'    => 'name',
         'order'      => 'asc',
-        'hide_empty' => true,
+        'hide_empty' => false,
       );
       $product_categories = get_terms('product_cat', $cat_args);
 
