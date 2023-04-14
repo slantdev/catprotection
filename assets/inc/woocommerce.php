@@ -1,4 +1,26 @@
 <?php
+
+/**
+ * Recursively sort an array of taxonomy terms hierarchically. Child categories will be
+ * placed under a 'children' member of their parent term.
+ * @param Array   $cats     taxonomy term objects to sort
+ * @param integer $parentId the current parent ID to put them in
+ */
+function sort_terms_hierarchicaly(array $cats, $parentId = 0)
+{
+  $into = [];
+  foreach ($cats as $i => $cat) {
+    if ($cat->parent == $parentId) {
+      $cat->children = sort_terms_hierarchicaly($cats, $cat->term_id);
+      $into[$cat->term_id] = $cat;
+    }
+  }
+  return $into;
+}
+
+?>
+
+<?php
 function wc_before_shop_loop_start()
 {
   echo '<div class="flex justify-end mb-2 md:mb-4">';
@@ -9,15 +31,27 @@ function wc_before_shop_loop_start()
 
       <?php
       $cat_args = array(
-        'orderby'    => 'name',
+        'orderby'    => 'menu_order',
         'order'      => 'asc',
         'hide_empty' => true,
       );
       $product_categories = get_terms('product_cat', $cat_args);
 
+      $product_categories = sort_terms_hierarchicaly($product_categories);
+
       if (!empty($product_categories)) {
         foreach ($product_categories as $key => $category) {
-          echo '<option value="' . $category->slug . '">' . $category->name . '</option>';
+          echo '<option value="' . $category->slug . '">' . $category->name . '&nbsp;&nbsp;(' . $category->count . ')</option>';
+          if ($category->children) {
+            foreach ($category->children as $key => $children) {
+              echo '<option value="' . $children->slug . '">&nbsp;&#x2212;&nbsp;' . $children->name . '&nbsp;&nbsp;(' . $children->count . ')</option>';
+              if ($children->children) {
+                foreach ($children->children as $key => $grandchildren) {
+                  echo '<option value="' . $grandchildren->slug . '">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x2212;&nbsp;' . $grandchildren->name . '&nbsp;&nbsp;(' . $grandchildren->count . ')</option>';
+                }
+              }
+            }
+          }
         }
       }
       ?>
