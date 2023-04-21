@@ -1330,12 +1330,17 @@ function acf_search_distinct($where)
   return $where;
 }
 add_filter('posts_distinct', 'acf_search_distinct');
-
+// add_filter('woocommerce_thankyou_order_received_text', function () {
+//   return
+//     'Thank you for ordering your cat-care items from The Cat Protection Society of Victoria and helping to support the work of our Society to care for cats in need.' . '<br/>' .
+//     'A member of our team will prepare your order and contact you when your goods are available for collection.' . '<br/>' .
+//     'On arrival to our Shelter, please contact our retail store on 8457 6500 and our team will bring your order to the front gate for contact free pick up.';
+// });
 add_filter('woocommerce_thankyou_order_received_text', function () {
   return
-    'Thank you for ordering your cat-care items from The Cat Protection Society of Victoria and helping to support the work of our Society to care for cats in need.' . '<br/>' .
-    'A member of our team will prepare your order and contact you when your goods are available for collection.' . '<br/>' .
-    'On arrival to our Shelter, please contact our retail store on 8457 6500 and our team will bring your order to the front gate for contact free pick up.';
+    'Meow.' . '<br/>' .
+    'Thank you for your order and helping to support the work of our Society in caring for and rehoming cats in need. We think you are the cats whiskers.' . '<br/>' .
+    'A member of our team will prepare your order and ensure it is shipped out within 3 working days via standard parcel post. If you have any questions with regards to your order, you can contact us via email <a href="mail:support@catprotection.com.au">support@catprotection.com.au</a>';
 });
 
 add_action('after_setup_theme', 'woocommerce_support');
