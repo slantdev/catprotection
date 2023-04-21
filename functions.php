@@ -1396,13 +1396,40 @@ remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_pr
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
 
 // Update Cart total
-add_filter('woocommerce_add_to_cart_fragments', 'iconic_cart_count_fragments', 10, 1);
-function iconic_cart_count_fragments($fragments)
+add_filter('woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment');
+function woocommerce_header_add_to_cart_fragment($fragments)
 {
-  $fragments['span.cart__count'] = '<span class="cart__count">' . WC()->cart->get_cart_contents_count() . '</span>';
-
+  global $woocommerce;
+  ob_start();
+?>
+  <span class="cart-top__count"><?php echo $woocommerce->cart->cart_contents_count; ?></span>
+  <?php
+  $fragments['.cart-top__count'] = ob_get_clean();
   return $fragments;
 }
+
+//add_filter('woocommerce_add_to_cart_fragments', 'iconic_cart_count_fragments', 10, 1);
+function iconic_cart_count_fragments($fragments)
+{
+
+  //if (!empty(WC()->cart->get_cart_contents_count())) {
+  //$fragments['span.cart__count'] = '<span class="cart__count">' . WC()->cart->get_cart_contents_count() . '</span>';
+  //ob_start();
+  // echo '<div class="header-mini-cart">';
+  // woocommerce_mini_cart();
+  // echo '</div>';
+  //$fragments['span.cart__count'] = ob_get_clean();
+  //}
+
+  $fragments['span.cart__count'] = '<span class="cart__count">' . WC()->cart->get_cart_contents_count() . '</span>';
+  return $fragments;
+}
+// function iconic_cart_count_fragments($fragments)
+// {
+//   $fragments['span.cart__count'] = '<span class="cart__count">' . WC()->cart->get_cart_contents_count() . '</span>';
+
+//   return $fragments;
+// }
 
 // Add checkout button and get quantity
 function add_content_after_addtocart()
