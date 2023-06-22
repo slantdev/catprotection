@@ -43,7 +43,7 @@
         <h2 class="text-3xl text-left md:text-center font-normal text-[#2e2356] tracking-wider mb-4">Please select from the following:</h2>
         <div class="grid grid-cols-1 gap-y-2 md:grid-cols-3">
           <div class="relative min-h-[360px] xl:min-h-[500px]">
-            <img src="/wp-content/uploads/2023/06/male-cat.jpeg" alt="" class="object-cover h-full w-full">
+            <img src="/wp-content/uploads/2023/06/male-cat.jpg" alt="" class="object-cover h-full w-full">
             <div class="absolute w-full inset-0 bg-gradient-to-t from-black/80 to-transparent via-black/20 flex items-end">
               <div class="p-5 text-center w-full">
                 <h2 class="text-white normal-case tracking-wide mb-4 text-2xl md:text-xl lg:text-2xl leading-tight">I have a male cat</h2>
@@ -54,7 +54,7 @@
             </div>
           </div>
           <div class="relative min-h-[360px] xl:min-h-[500px]">
-            <img src="/wp-content/uploads/2023/06/female-cat.jpeg" alt="" class="object-cover h-full w-full">
+            <img src="/wp-content/uploads/2023/06/female-cat.jpg" alt="" class="object-cover h-full w-full">
             <div class="absolute w-full inset-0 bg-gradient-to-t from-black/80 to-transparent via-black/20 flex items-end">
               <div class="p-5 text-center w-full">
                 <h2 class="text-white normal-case tracking-wide mb-4 text-2xl md:text-xl lg:text-2xl leading-tight">I have a female cat who is not pregnant</h2>
@@ -65,7 +65,7 @@
             </div>
           </div>
           <div class="relative min-h-[360px] xl:min-h-[500px]">
-            <img src="/wp-content/uploads/2023/06/pregnant-cat4-1.jpeg" alt="" class="object-cover h-full w-full">
+            <img src="/wp-content/uploads/2023/06/pregnant-cat4-1.jpg" alt="" class="object-cover h-full w-full">
             <div class="absolute w-full inset-0 bg-gradient-to-t from-black/80 to-transparent via-black/20 flex items-end">
               <div class="p-6 text-center w-full">
                 <h2 class="text-white normal-case tracking-wide mb-4 text-2xl md:text-xl lg:text-2xl leading-tight">I have a female cat who is pregnant or who has recently given birth to a litter of kittens</h2>
