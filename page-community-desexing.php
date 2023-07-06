@@ -57,7 +57,7 @@
             <img src="/wp-content/uploads/2023/06/female-cat.jpg" alt="" class="object-cover h-full w-full">
             <div class="absolute w-full inset-0 bg-gradient-to-t from-black/80 to-transparent via-black/20 flex items-end">
               <div class="p-5 text-center w-full">
-                <h2 class="text-white normal-case tracking-wide mb-4 text-2xl md:text-xl lg:text-2xl leading-tight">I have a female cat who is not pregnant</h2>
+                <h2 class="text-white normal-case tracking-wide mb-4 text-2xl md:text-xl lg:text-2xl leading-tight">I have a female Cat between 8 weeks and 8 years old</h2>
                 <div>
                   <a class="button mb-0" href="https://catprotection.com.au/fundeddesexing/">Select</a>
                 </div>
@@ -68,7 +68,7 @@
             <img src="/wp-content/uploads/2023/06/pregnant-cat4-1.jpg" alt="" class="object-cover h-full w-full">
             <div class="absolute w-full inset-0 bg-gradient-to-t from-black/80 to-transparent via-black/20 flex items-end">
               <div class="p-6 text-center w-full">
-                <h2 class="text-white normal-case tracking-wide mb-4 text-2xl md:text-xl lg:text-2xl leading-tight">I have a female cat who is pregnant or who has recently given birth to a litter of kittens</h2>
+                <h2 class="text-white normal-case tracking-wide mb-4 text-2xl md:text-xl lg:text-2xl leading-tight">I have a female cat who has recently had kittens</h2>
                 <div>
                   <a class="button mb-0" href="https://catprotection.com.au/vet-clinic/last-litter/">Select</a>
                 </div>
