@@ -23,14 +23,18 @@ if (!defined('ABSPATH')) {
 ?>
 
 <?php
-$thumbnail_id = get_woocommerce_term_meta($category->term_id, 'thumbnail_id', true);
+$thumbnail_id = get_term_meta($category->term_id, 'thumbnail_id', true);
 $size = 'gallery_tiles';
 $image = wp_get_attachment_image_src($thumbnail_id, $size);
 ?>
 
 <a href="<?php echo get_category_link($category); ?>" class="cell shop-category__item">
-  <figure class="shop-category__figure">
-    <img src="<?php echo $image[0]; ?>" class="shop-category__img" alt="<?php echo $category->name; ?>">
+  <figure class="shop-category__figure w-full h-full">
+    <?php if ($image) : ?>
+      <img src="<?php echo $image[0]; ?>" class="shop-category__img object-cover w-full h-full" alt="<?php echo $category->name; ?>">
+    <?php else : ?>
+      <img src="<?php echo site_url() . '/wp-content/uploads/woocommerce-placeholder-300x225.png'; ?>" class="shop-category__img object-cover w-full h-full" alt="<?php echo $category->name; ?>">
+    <?php endif; ?>
     <figcaption class="shop-category__name"><?php echo $category->name; ?></figcaption>
   </figure>
 </a>
